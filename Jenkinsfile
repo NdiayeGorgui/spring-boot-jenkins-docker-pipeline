@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Create docker image') { 
             steps {
-             sh 'docker build -t gorgui/spring-boot-jenkins-docker-pipeline:latest .'
+             bat 'docker build -t gorgui/spring-boot-jenkins-docker-pipeline:latest .'
             }
         }
         

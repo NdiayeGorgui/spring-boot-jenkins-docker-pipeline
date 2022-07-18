@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class SpringBootJenkinsDockerPipelineApplication {
 	
-	public class SpringBootDockerDemoApplication {
+	
 	@GetMapping("/test")
 	public String getMessage() {
 		return "jenkins deploy docker";

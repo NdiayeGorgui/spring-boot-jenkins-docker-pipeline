@@ -13,17 +13,17 @@ pipeline {
         }
         stage('Create docker image') { 
             steps {
-             sh 'docker build -t gorgui/spring-boot-jenkins-docker-pipeline:latest .'
+             bat 'docker build -t gorgui/spring-boot-jenkins-docker-pipeline:latest .'
             }
         }
          stage('Push docker image') { 
             steps {
-             sh 'docker push gorgui/spring-boot-jenkins-docker-pipeline'
+             bat 'docker push gorgui/spring-boot-jenkins-docker-pipeline'
             }
         }
          stage('Deploy to kubernetes') { 
             steps {
-             sh'deploymentservice.yaml'
+             bat 'kubectl apply -f deploymentservice.yaml'
             }
         }
     }

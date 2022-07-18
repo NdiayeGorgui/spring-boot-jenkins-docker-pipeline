@@ -16,7 +16,6 @@ pipeline {
              bat 'docker build -t gorgui/spring-boot-jenkins-docker-pipeline:latest .'
             }
         }
-        
          stage('Push docker image') { 
             steps {
              bat 'docker push gorgui/spring-boot-jenkins-docker-pipeline:latest .'

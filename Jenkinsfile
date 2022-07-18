@@ -6,6 +6,11 @@ pipeline {
              git 'https://github.com/NdiayeGorgui/spring-boot-jenkins-docker-pipeline.git'
             }
         }
+         stage('Maven Build') { 
+            steps {
+            bat 'mvn package'
+            }
+        }
         stage('Create docker image') { 
             steps {
              bat 'docker build -t gorgui/docker-jenkins-integration-sample:latest .'

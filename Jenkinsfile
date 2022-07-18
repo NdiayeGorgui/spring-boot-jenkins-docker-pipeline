@@ -21,6 +21,10 @@ pipeline {
              bat 'docker push gorgui/spring-boot-jenkins-docker-pipeline'
             }
         }
-        
+         stage('Deploy to kubernetes') { 
+            steps {
+             kubernetesDeploy(configs:'deploymentservice.yaml') 
+            }
+        }
     }
 }

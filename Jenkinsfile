@@ -17,5 +17,11 @@ pipeline {
             }
         }
         
+         stage('Push docker image') { 
+            steps {
+             bat 'docker push gorgui/spring-boot-jenkins-docker-pipeline:latest .'
+            }
+        }
+        
     }
 }

@@ -23,7 +23,7 @@ pipeline {
         }
          stage('Deploy to kubernetes') { 
             steps {
-             kubernetesDeploy(configs:'deploymentservice.yaml') 
+             kubernetesDeploy (configs:'deploymentservice.yaml') 
             }
         }
     }
